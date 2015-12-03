@@ -1,6 +1,4 @@
-module Day1Test where
-import qualified Distribution.TestSuite as Cabal
-import qualified Distribution.TestSuite.HUnit as Cabal
+module Day1Test (tests) where
 
 import Test.HUnit
 import Day1
