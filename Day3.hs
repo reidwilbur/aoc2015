@@ -1,17 +1,25 @@
-module Day3 (day3Input, getNextAddress, housesWithDeliveries) where
+module Day3 (day3Input, getNextAddress, housesWithDeliveries, housesWithDeliveries2) where
 import qualified Data.Text as Text
 import Data.List as List
-import Data.Map.Strict as Map
 import Data.Int as Int
 import Data.Set as Set
 
 housesWithDeliveries :: String -> Int.Int
-housesWithDeliveries dirs = let initDels = Map.singleton (0,0) 1
-                                addDel addr delMap = Map.insert addr ((Map.findWithDefault 0 addr delMap) + 1) delMap
-                                foldDels (delMap, addr) dir = ((addDel (getNextAddress dir addr) delMap), (getNextAddress dir addr))
-                                (dels, addr) = List.foldl foldDels (initDels, (0,0)) dirs
-                            --in Map.foldl (\total d -> if d > 1 then total + 1 else total) 0 dels
-                            in Set.size $ Map.keysSet dels
+housesWithDeliveries dirs = Set.size $ getDeliveredAddrs dirs
+
+getDeliveredAddrs :: String -> Set.Set (Integer, Integer)
+getDeliveredAddrs dirs = let initDels = Set.singleton (0,0)
+                             foldDels (delSet, addr) dir = ((Set.insert (getNextAddress dir addr) delSet), (getNextAddress dir addr))
+                             (dels, addr) = List.foldl foldDels (initDels, (0,0)) dirs
+                         in dels
+
+housesWithDeliveries2 :: String -> Int.Int
+housesWithDeliveries2 dirs = let idxDirs = List.zipWith (\i d -> (i, d)) [1..] dirs
+                                 santaDirs = List.map (\(_, d) -> d) $ List.filter (\(i, d) -> i `mod` 2 == 0) idxDirs
+                                 roboDirs = List.map (\(_, d) -> d) $ List.filter (\(i, d) -> i `mod` 2 /= 0) idxDirs
+                                 santaDels = getDeliveredAddrs santaDirs
+                                 roboDels = getDeliveredAddrs roboDirs
+                             in Set.size $ Set.union santaDels roboDels
 
 getNextAddress :: Char -> (Integer, Integer) -> (Integer, Integer)
 getNextAddress '^' (r,c) = (r+1,c)
