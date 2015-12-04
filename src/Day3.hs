@@ -9,8 +9,9 @@ housesWithDeliveries dirs = Set.size $ getDeliveredAddrs dirs
 
 getDeliveredAddrs :: String -> Set.Set (Integer, Integer)
 getDeliveredAddrs dirs = let initDels = Set.singleton (0,0)
-                             foldDels (delSet, addr) dir = ((Set.insert (getNextAddress dir addr) delSet), (getNextAddress dir addr))
-                             (dels, addr) = List.foldl foldDels (initDels, (0,0)) dirs
+                             foldDels (delSet, addr) dir =
+                               ((Set.insert (getNextAddress dir addr) delSet), (getNextAddress dir addr))
+                             (dels, _) = List.foldl foldDels (initDels, (0,0)) dirs
                          in dels
 
 housesWithDeliveries2 :: String -> Int.Int
