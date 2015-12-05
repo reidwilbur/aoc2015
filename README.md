@@ -2,3 +2,10 @@
 
 http://adventofcode.com/
 
+## Running
+
+```
+cabal configure --enable-tests
+cabal build
+cabal test
+```
