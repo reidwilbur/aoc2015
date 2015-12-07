@@ -1,7 +1,8 @@
-module Day6 (getLights, parseInstr, execInstr, Instr(TurnOn, Toggle, TurnOff), Addr) where
+module Day6 (getLights, parseInstr, execInstr, Instr(TurnOn, Toggle, TurnOff), Addr, brightness) where
 import Debug.Trace
 import qualified Data.Set as Set
 import qualified Data.List as List
+import qualified Data.Map.Strict as Map
 
 type Addr = (Integer, Integer)
 
@@ -16,6 +17,14 @@ execInstr s (TurnOff (r1,c1) (r2,c2)) = Set.difference s $ Set.fromList [ (r,c) 
 execInstr s (Toggle  (r1,c1) (r2,c2)) = let addrs = Set.fromList [ (r,c) | r <- [r1..r2], c <- [c1..c2]]
                                             litInBoth = Set.intersection s addrs
                                         in Set.union (Set.difference addrs litInBoth) (Set.difference s litInBoth)
+
+brightness :: [String] -> Integer
+brightness s = List.sum $ Map.elems $ List.foldl' execInstr2 Map.empty $ map parseInstr s
+
+execInstr2 :: Map.Map Addr Integer -> Instr -> Map.Map Addr Integer
+execInstr2 m (TurnOn  (r1,c1) (r2,c2)) = List.foldl' (\mm k -> Map.insertWith (+) k 1 mm) m [(r,c) | r <- [r1..r2], c <- [c1..c2]]
+execInstr2 m (TurnOff (r1,c1) (r2,c2)) = List.foldl' (\mm k -> Map.insertWith (\n o -> if o > 0 then o - 1 else 0) k 0 mm) m [(r,c) | r <- [r1..r2], c <- [c1..c2]]
+execInstr2 m (Toggle  (r1,c1) (r2,c2)) = List.foldl' (\mm k -> Map.insertWith (\n o -> o + 2) k 2 mm) m [(r,c) | r <- [r1..r2], c <- [c1..c2]]
 
 parseAddr :: String -> Addr
 parseAddr ss = let r = read (takeWhile (',' /=) ss) :: Integer
