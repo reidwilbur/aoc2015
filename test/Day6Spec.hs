@@ -10,6 +10,7 @@ spec = do
       it "should the first column of lights for toggle (0,0) (999, 0)" $ do
         getLights ["toggle 0,0 through 999,0"] `shouldBe` Set.fromList [(r,0) | r <- [0..999]]
 
+-- takes a while to run
 --      it "should return 543903 lights for day6Input" $ do
 --        (Set.size $ getLights day6Input) `shouldBe` 543903
 
@@ -47,8 +48,9 @@ spec = do
       it "should be 2000000 for 'toggle 0,0 through 999,999'" $ do
         brightness ["toggle 0,0 through 999,999"] `shouldBe` 2000000
 
-      it "should be 14687245 for day6Input" $ do
-        brightness day6Input `shouldBe` 14687245 
+-- takes a while to run
+--      it "should be 14687245 for day6Input" $ do
+--        brightness day6Input `shouldBe` 14687245 
 
 main :: IO ()
 main = hspec spec
