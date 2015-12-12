@@ -19,7 +19,10 @@ data Gate = Not String String |
             deriving (Show, Eq)
 
 initGates :: [String] -> [Gate]
-initGates ss = List.foldr (\mg l -> if Maybe.isJust mg then (Maybe.fromJust mg):l else l) [] $ List.map parseGate ss
+initGates ss = List.foldr (\mg l -> case mg of 
+                                      Just mg -> mg:l
+                                      _ -> l
+                          ) [] $ List.map parseGate ss
 
 mapSignal :: SignalMap -> Maybe.Maybe Signal -> SignalMap
 mapSignal signals signal = case signal of
