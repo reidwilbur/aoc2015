@@ -16,7 +16,9 @@ extra-source-files:  README.md
 cabal-version:       >=1.10
 
 library
-  exposed-modules:     Day1, Day2, Day3, Day4, Day5, Day6, Day7, Day8
+  exposed-modules:     Day1, Day2, Day3, Day4
+                       , Day5, Day6, Day7, Day8
+                       , Day10
   -- other-modules:       
   -- other-extensions:    
   build-depends:       base >=4.7 && <4.8
