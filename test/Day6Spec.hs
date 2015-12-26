@@ -1,4 +1,4 @@
-module Day6Spec where
+module Main where
 import Test.Hspec
 import Day6
 import qualified Data.Set as Set

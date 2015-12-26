@@ -1,4 +1,4 @@
-module Day3Spec where
+module Main where
 import Test.Hspec
 import Day3
 

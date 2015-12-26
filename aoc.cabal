@@ -18,7 +18,7 @@ cabal-version:       >=1.10
 library
   exposed-modules:     Day1, Day2, Day3, Day4
                        , Day5, Day6, Day7, Day8
-                       , Day10, Day11, Day12
+                       , Day10, Day11, Day12, Day14
   -- other-modules:       
   -- other-extensions:    
   build-depends:       base >=4.7 && <4.8
@@ -30,9 +30,9 @@ library
   hs-source-dirs:      src
   default-language:    Haskell2010
 
-test-suite spec
+test-suite Day1Spec
   hs-source-dirs:   test
-  main-is:          Spec.hs
+  main-is:          Day1Spec.hs
   type:             exitcode-stdio-1.0
   build-depends:    base >=4.7 && <4.8
                     , text >=1.1 && <1.2
@@ -41,5 +41,160 @@ test-suite spec
                     , aoc >= 0.1.0.0
                     , hspec >= 1.3
                     , bytestring >= 0.10.4.0
+  ghc-options:      -threaded
+  default-language: Haskell2010
+
+test-suite Day2Spec
+  hs-source-dirs:   test
+  main-is:          Day2Spec.hs
+  type:             exitcode-stdio-1.0
+  build-depends:    base >=4.7 && <4.8
+                    , text >=1.1 && <1.2
+                    , containers >=0.5 && <0.6
+                    , Cabal >= 1.18.0
+                    , aoc >= 0.1.0.0
+                    , hspec >= 1.3
+                    , bytestring >= 0.10.4.0
+  ghc-options:      -threaded
+  default-language: Haskell2010
+
+test-suite Day3Spec
+  hs-source-dirs:   test
+  main-is:          Day3Spec.hs
+  type:             exitcode-stdio-1.0
+  build-depends:    base >=4.7 && <4.8
+                    , text >=1.1 && <1.2
+                    , containers >=0.5 && <0.6
+                    , Cabal >= 1.18.0
+                    , aoc >= 0.1.0.0
+                    , hspec >= 1.3
+                    , bytestring >= 0.10.4.0
+  ghc-options:      -threaded
+  default-language: Haskell2010
+
+test-suite Day4Spec
+  hs-source-dirs:   test
+  main-is:          Day4Spec.hs
+  type:             exitcode-stdio-1.0
+  build-depends:    base >=4.7 && <4.8
+                    , text >=1.1 && <1.2
+                    , containers >=0.5 && <0.6
+                    , Cabal >= 1.18.0
+                    , aoc >= 0.1.0.0
+                    , hspec >= 1.3
+                    , bytestring >= 0.10.4.0
+  ghc-options:      -threaded
+  default-language: Haskell2010
+
+test-suite Day5Spec
+  hs-source-dirs:   test
+  main-is:          Day5Spec.hs
+  type:             exitcode-stdio-1.0
+  build-depends:    base >=4.7 && <4.8
+                    , text >=1.1 && <1.2
+                    , containers >=0.5 && <0.6
+                    , Cabal >= 1.18.0
+                    , aoc >= 0.1.0.0
+                    , hspec >= 1.3
+                    , bytestring >= 0.10.4.0
+  ghc-options:      -threaded
+  default-language: Haskell2010
+
+test-suite Day6Spec
+  hs-source-dirs:   test
+  main-is:          Day6Spec.hs
+  type:             exitcode-stdio-1.0
+  build-depends:    base >=4.7 && <4.8
+                    , text >=1.1 && <1.2
+                    , containers >=0.5 && <0.6
+                    , Cabal >= 1.18.0
+                    , aoc >= 0.1.0.0
+                    , hspec >= 1.3
+                    , bytestring >= 0.10.4.0
+  ghc-options:      -threaded
+  default-language: Haskell2010
+
+test-suite Day7Spec
+  hs-source-dirs:   test
+  main-is:          Day7Spec.hs
+  type:             exitcode-stdio-1.0
+  build-depends:    base >=4.7 && <4.8
+                    , text >=1.1 && <1.2
+                    , containers >=0.5 && <0.6
+                    , Cabal >= 1.18.0
+                    , aoc >= 0.1.0.0
+                    , hspec >= 1.3
+                    , bytestring >= 0.10.4.0
+  ghc-options:      -threaded
+  default-language: Haskell2010
+
+test-suite Day8Spec
+  hs-source-dirs:   test
+  main-is:          Day8Spec.hs
+  type:             exitcode-stdio-1.0
+  build-depends:    base >=4.7 && <4.8
+                    , text >=1.1 && <1.2
+                    , containers >=0.5 && <0.6
+                    , Cabal >= 1.18.0
+                    , aoc >= 0.1.0.0
+                    , hspec >= 1.3
+                    , bytestring >= 0.10.4.0
+  ghc-options:      -threaded
+  default-language: Haskell2010
+
+test-suite Day10Spec
+  hs-source-dirs:   test
+  main-is:          Day10Spec.hs
+  type:             exitcode-stdio-1.0
+  build-depends:    base >=4.7 && <4.8
+                    , text >=1.1 && <1.2
+                    , containers >=0.5 && <0.6
+                    , Cabal >= 1.18.0
+                    , aoc >= 0.1.0.0
+                    , hspec >= 1.3
+                    , bytestring >= 0.10.4.0
+  ghc-options:      -threaded
+  default-language: Haskell2010
+
+test-suite Day11Spec
+  hs-source-dirs:   test
+  main-is:          Day11Spec.hs
+  type:             exitcode-stdio-1.0
+  build-depends:    base >=4.7 && <4.8
+                    , text >=1.1 && <1.2
+                    , containers >=0.5 && <0.6
+                    , Cabal >= 1.18.0
+                    , aoc >= 0.1.0.0
+                    , hspec >= 1.3
+                    , bytestring >= 0.10.4.0
+  ghc-options:      -threaded
+  default-language: Haskell2010
+
+test-suite Day12Spec
+  hs-source-dirs:   test
+  main-is:          Day12Spec.hs
+  type:             exitcode-stdio-1.0
+  build-depends:    base >=4.7 && <4.8
+                    , text >=1.1 && <1.2
+                    , containers >=0.5 && <0.6
+                    , Cabal >= 1.18.0
+                    , aoc >= 0.1.0.0
+                    , hspec >= 1.3
+                    , bytestring >= 0.10.4.0
+  ghc-options:      -threaded
+  default-language: Haskell2010
+
+test-suite Day14Spec
+  hs-source-dirs:   test
+  main-is:          Day14Spec.hs
+  type:             exitcode-stdio-1.0
+  build-depends:    base >=4.7 && <4.8
+                    , text >=1.1 && <1.2
+                    , containers >=0.5 && <0.6
+                    , Cabal >= 1.18.0
+                    , aoc >= 0.1.0.0
+                    , hspec >= 1.3
+                    , bytestring >= 0.10.4.0
+  ghc-options:      -threaded
   default-language: Haskell2010
 

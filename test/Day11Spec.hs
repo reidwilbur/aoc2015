@@ -1,4 +1,4 @@
-module Day11Spec where
+module Main where
 import Test.Hspec
 import Day11
 import qualified Data.List as List
