@@ -4,7 +4,7 @@ import Day11
 import qualified Data.List as List
 
 spec :: Spec
-spec = do
+spec = parallel $ do
   describe "Day11" $ do
     context "hasIncreasingTriple" $ do
       it "returns True for hijklmmn" $ do

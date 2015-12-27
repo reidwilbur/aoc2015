@@ -4,7 +4,7 @@ import Day6
 import qualified Data.Set as Set
 
 spec :: Spec
-spec = do
+spec = parallel $ do
   describe "Day6" $ do
     context "getLights" $ do
       it "should the first column of lights for toggle (0,0) (999, 0)" $ do

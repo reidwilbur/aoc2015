@@ -4,7 +4,7 @@ import Day10
 import qualified Data.List as List
 
 spec :: Spec
-spec = do
+spec = parallel $ do
   describe "Day10" $ do
     context "getNextSeq" $ do
       it "should return 11 for 1" $ do
