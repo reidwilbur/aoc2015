@@ -2,6 +2,7 @@ module Main where
 import Test.Hspec
 import Day14
 import qualified Data.List as List
+import qualified Data.Set as Set
 
 comet = Deer "Comet" 14 10 127
 dancer = Deer "Dancer" 16 11 162
@@ -46,9 +47,26 @@ spec = do
         getDistance dancer 1000 `shouldBe` 1056
 
     context "getWinner" $ do
-      it "should return () for day14Input 2503s" $ do
+      it "should return 2696 for day14Input 2503s" $ do
         let deer = List.map parseDeer day14Input
         getWinner deer 2503 `shouldBe` ("Cupid", 2696)
+
+    context "getWinner2" $ do
+      it "should return 1 for day14TestInput 1s" $ do
+        let deer = Set.fromList [Deer "Comet" 14 10 127, Deer "Dancer" 16 11 162]
+        getWinner2 deer 1 `shouldBe` 1
+
+      it "should return 139 for day14TestInput 140s" $ do
+        let deer = Set.fromList [Deer "Comet" 14 10 127, Deer "Dancer" 16 11 162]
+        getWinner2 deer 140 `shouldBe` 139
+
+      it "should return 689 for day14TestInput 1000s" $ do
+        let deer = Set.fromList [Deer "Comet" 14 10 127, Deer "Dancer" 16 11 162]
+        getWinner2 deer 1000 `shouldBe` 689
+
+      it "should return 1084 for day14Input 2503s" $ do
+        let deer = Set.fromList $ List.map parseDeer day14Input
+        getWinner2 deer 2503 `shouldBe` 1084
 
 main :: IO ()
 main = hspec spec
