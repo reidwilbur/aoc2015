@@ -34,6 +34,11 @@ spec = do
         let sues = List.map (parseSue) day16Input
         getBestMatch day16TestInput sues `shouldSatisfy` (\(_, (Sue n _)) -> n == "Sue 103")
 
+    context "getBestMatch2" $ do
+      it "should return _ for day16TestInput" $ do
+        let sues = List.reverse $ List.map (parseSue) day16Input
+        getBestMatch2 day16TestInput sues `shouldSatisfy` (\(_, (Sue n _)) -> n == "Sue 405")
+
 main :: IO ()
 main = hspec spec
 
