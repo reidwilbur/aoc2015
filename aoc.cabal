@@ -31,7 +31,7 @@ library
   hs-source-dirs:      src
   default-language:    Haskell2010
 
-test-suite Day1Spec
+test-suite day1
   hs-source-dirs:   test
   main-is:          Day1Spec.hs
   type:             exitcode-stdio-1.0
@@ -45,7 +45,7 @@ test-suite Day1Spec
   ghc-options:      -threaded
   default-language: Haskell2010
 
-test-suite Day2Spec
+test-suite day2
   hs-source-dirs:   test
   main-is:          Day2Spec.hs
   type:             exitcode-stdio-1.0
@@ -59,7 +59,7 @@ test-suite Day2Spec
   ghc-options:      -threaded
   default-language: Haskell2010
 
-test-suite Day3Spec
+test-suite day3
   hs-source-dirs:   test
   main-is:          Day3Spec.hs
   type:             exitcode-stdio-1.0
@@ -73,7 +73,7 @@ test-suite Day3Spec
   ghc-options:      -threaded
   default-language: Haskell2010
 
-test-suite Day4Spec
+test-suite day4
   hs-source-dirs:   test
   main-is:          Day4Spec.hs
   type:             exitcode-stdio-1.0
@@ -87,7 +87,7 @@ test-suite Day4Spec
   ghc-options:      -threaded
   default-language: Haskell2010
 
-test-suite Day5Spec
+test-suite day5
   hs-source-dirs:   test
   main-is:          Day5Spec.hs
   type:             exitcode-stdio-1.0
@@ -101,7 +101,7 @@ test-suite Day5Spec
   ghc-options:      -threaded
   default-language: Haskell2010
 
-test-suite Day6Spec
+test-suite day6
   hs-source-dirs:   test
   main-is:          Day6Spec.hs
   type:             exitcode-stdio-1.0
@@ -115,7 +115,7 @@ test-suite Day6Spec
   ghc-options:      -threaded
   default-language: Haskell2010
 
-test-suite Day7Spec
+test-suite day7
   hs-source-dirs:   test
   main-is:          Day7Spec.hs
   type:             exitcode-stdio-1.0
@@ -129,7 +129,7 @@ test-suite Day7Spec
   ghc-options:      -threaded
   default-language: Haskell2010
 
-test-suite Day8Spec
+test-suite day8
   hs-source-dirs:   test
   main-is:          Day8Spec.hs
   type:             exitcode-stdio-1.0
@@ -143,7 +143,7 @@ test-suite Day8Spec
   ghc-options:      -threaded
   default-language: Haskell2010
 
-test-suite Day10Spec
+test-suite day10
   hs-source-dirs:   test
   main-is:          Day10Spec.hs
   type:             exitcode-stdio-1.0
@@ -157,7 +157,7 @@ test-suite Day10Spec
   ghc-options:      -threaded
   default-language: Haskell2010
 
-test-suite Day11Spec
+test-suite day11
   hs-source-dirs:   test
   main-is:          Day11Spec.hs
   type:             exitcode-stdio-1.0
@@ -171,7 +171,7 @@ test-suite Day11Spec
   ghc-options:      -threaded
   default-language: Haskell2010
 
-test-suite Day12Spec
+test-suite day12
   hs-source-dirs:   test
   main-is:          Day12Spec.hs
   type:             exitcode-stdio-1.0
@@ -185,7 +185,7 @@ test-suite Day12Spec
   ghc-options:      -threaded
   default-language: Haskell2010
 
-test-suite Day14Spec
+test-suite day14
   hs-source-dirs:   test
   main-is:          Day14Spec.hs
   type:             exitcode-stdio-1.0
@@ -199,7 +199,7 @@ test-suite Day14Spec
   ghc-options:      -threaded
   default-language: Haskell2010
 
-test-suite Day16Spec
+test-suite day16
   hs-source-dirs:   test
   main-is:          Day16Spec.hs
   type:             exitcode-stdio-1.0
