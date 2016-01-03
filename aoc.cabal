@@ -20,6 +20,7 @@ library
                        , Day5, Day6, Day7, Day8
                        , Day10, Day11, Day12, Day13
                        , Day14, Day16, Day17, Day18
+                       , Day20
   -- other-modules:       
   -- other-extensions:    
   build-depends:       base >=4.7 && <4.8
@@ -243,6 +244,20 @@ test-suite day17
 test-suite day18
   hs-source-dirs:   test
   main-is:          Day18Spec.hs
+  type:             exitcode-stdio-1.0
+  build-depends:    base >=4.7 && <4.8
+                    , text >=1.1 && <1.2
+                    , containers >=0.5 && <0.6
+                    , Cabal >= 1.18.0
+                    , aoc >= 0.1.0.0
+                    , hspec >= 1.3
+                    , vector >= 0.10.9.1
+  ghc-options:      -threaded
+  default-language: Haskell2010
+
+test-suite day20
+  hs-source-dirs:   test
+  main-is:          Day20Spec.hs
   type:             exitcode-stdio-1.0
   build-depends:    base >=4.7 && <4.8
                     , text >=1.1 && <1.2
